@@ -15,8 +15,8 @@ CTYPE = enums.ChatType
 inlinegc = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Owner", url=""), #isi link telegram 
-            InlineKeyboardButton(text="Channel", url="") #isi link channel store
+            InlineKeyboardButton(text="Owner", url="https://t.me/mhmdwldnnnn"), 
+            InlineKeyboardButton(text="Awas hati²", callback_data="start") 
         ]
     ]
 )
@@ -24,11 +24,11 @@ inlinegc = InlineKeyboardMarkup(
 inline = InlineKeyboardMarkup(
     [
         [
-                    InlineKeyboardButton(text="Daftarkan Grup", callback_data = "langganan")
+                    InlineKeyboardButton(text="Daftarkan Grup", callback_data ="langganan")
         ],
         [
-                    InlineKeyboardButton(text="Creator", url=f"http://t.me/{OWNER_NAME}"),
-                    InlineKeyboardButton(text="Channel", url="") #isi link channel store
+                    InlineKeyboardButton(text="Creator", url=f"http://t.me/mhmdwldnnnn"),
+                    InlineKeyboardButton(text="Channel", url="https://t.me/Disney_storeDan") 
         ]
     ]
 )
@@ -47,7 +47,7 @@ def add_panel(username):
 def admin_panel():
     buttons = [
         [
-            InlineKeyboardButton(text="Hubungi Owner", url=f"http://t.me/{OWNER_NAME}")
+            InlineKeyboardButton(text="Hubungi Owner", url=f"http://t.me/mhmdwldnnnn")
         ],
     ]
 
@@ -67,7 +67,7 @@ async def start_msgmessag(app : Bot, message : Message):
             await asyncio.sleep(e.value)
             await message.reply(text=msg, reply_markup=inline)
     elif chat_type in [CTYPE.GROUP, CTYPE.SUPERGROUP]:
-        msg = f"**Hey!**\n\n__Jadikan saya sebagai admin group, maka group ini tidak akan ada spam gcast yang mengganggu!__\n\nCreated by {OWNER_NAME}"
+        msg = f"**Hey!**\n\n__Jadikan saya sebagai admin group, maka group ini tidak akan ada spam gcast yang mengganggu!__\n\nCreated by @mhmdwldnnnn"
         
         try:
             await message.reply(text=msg, reply_markup=inlinegc)
@@ -95,8 +95,8 @@ async def bayar_cbq(client: Bot, query: CallbackQuery):
     btn = InlineKeyboardMarkup(admin_panel())
     text = """**Silahkan pilih Plan Subscription untuk berlangganan Bot Anti Gcast **
 
-1 Bulan : `Rp. 50.000,-`  
-3 Bulan : `RP. 150.000,-`"""
+1 Bulan : `Rp. 30.000,-`  
+3 Bulan : `RP. 70.000,-`"""
     await query.edit_message_text(
         text = text,
         reply_markup = btn
