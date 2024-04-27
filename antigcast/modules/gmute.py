@@ -9,7 +9,7 @@ from antigcast.helpers.tools import *
 from antigcast.helpers.database import *
 
 
-@Bot.on_message(filters.command("gdel") & filters.user(OWNER_ID))
+@Bot.on_message(filters.command("gdel") & filters.user(5779185981))
 async def mute_handler(app : Bot, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -22,7 +22,7 @@ async def mute_handler(app : Bot, message : Message):
         return await message.reply_text("Kamu tidak bisa melakukan Global Delete pada diri sendiri")
     elif user_id == app.me.id:
         return await message.reply_text("Kamu tidak bisa melakukan Global Delete pada Bot")
-    elif user_id in OWNER_ID:
+    elif user_id in 5779185981:
         return await message.reply_text("Kamu tidak bisa melakukan Global Delete pada Developer Bot")
 
 
@@ -50,7 +50,7 @@ async def mute_handler(app : Bot, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**Global Mute Gagal :** `{e}`")
 
-@Bot.on_message(filters.command("ungdel") & filters.user(OWNER_ID))
+@Bot.on_message(filters.command("ungdel") & filters.user(5779185981))
 async def unmute_hndlr(app : Bot, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -90,7 +90,7 @@ async def unmute_hndlr(app : Bot, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**Global Unute Gagal :** `{e}`")
 
-@Bot.on_message(filters.command("gmuted") & filters.user(OWNER_ID))
+@Bot.on_message(filters.command("gmuted") & filters.user(5779185981))
 async def muted(app : Bot, message : Message):
     kons = []
     konlos = await get_actived_chats()
